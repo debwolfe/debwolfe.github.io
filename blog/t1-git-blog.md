@@ -1,30 +1,15 @@
-<!-- This template is in markdown, not html, so
-  it will not render beautifully when you copy and
-  paste it into your github.io site, but it will at
-  least be published. Next week you'll be creating a
-  blog template using HTML and CSS and you'll be able
-  to copy and paste the blog posts from week 1 in there
-  to make them pretty next week.
+Deb BootCamp Week 1
 
-  For now, please replace the title, subtitle (if desired),
-  and date with the text you would like. Markdown is pretty
-  simple, so you can just feel free to type. =) You'll want
-  to delete this chunk of a comment as well. -->
+Subversioning the dominant paradigm? Switching to Git..
+
+November 21, 2014
+
+Subscribing to version control and learning the best way to in fact control versions would seem essential to anyone in a trade involving a QWERTY keyboard attached to a hard drive. Say now that the drive and keyboard have something to do with the Internet. For a party of one, this is a great opportunity for controling versions with a mind for getting to the final draft. An author can take a snapshot of morning work on the local drive but also send them up from time to time to another place. Should the river rise and threaten the local drive, the version nearest to the final should present itself as a great comfort.
 
 
-Title
+I would like to think of GitHub's comments as a way of stamping milestones on a tumble of time spent on work. By using the diff command we can see how we've progressed (or erased) between versions. This also goes for comparing changes between the original version, for times when we don't start from a blank slate, and the versions of others. They have most likely also diverged. When changes are good from above, or good from the sides, we can receive the benefits back down to our own worked upon file.
 
-Subtitle
-
-Date
-
-Paragraph 1
-
-Paragraph 2
-
-Paragraph 3
-
-Add as many paragraphs as you want!!!
+GitHub stores files in a way that suggests itself to keeping track of a solo project over a connected series of working sessions.  It's also set up for collaborating with others. This makes the most sense for programmers who usually work on collective projects all at once. More than one person will work on even a small project. And if it's a good one, it may live on in some conceivable way in an entirely different later project.
 
 
 
