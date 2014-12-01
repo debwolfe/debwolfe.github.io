@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Add It Up, a Blog by Deb Wolfe</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<div class = "sidebar">
+  <div class = "home-nav">
+        <a href = "../index.html">DEB WOLFE</a>
+  </div>
+  <aside>
+    <div class = "bio">
+      <img src = "../images/debwolfe.jpg" alt = "Deb Wolfe">
+      <p>I'm Deb Wolfe, a developer from SF reporting from bootcamp.</p>
+    </div>
+  </aside>
+  <nav>
+    <ul id = "sidebar-nav">
+        <li> <a href = "../blog/index.html">Up</a></li>
+        <li> <a href = "">November</a></li>
+        <li> <a href = "">October</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div class = "content">
+<nav>
+    <ul id = "top-nav">
+        <li><a href = "http://www.github.com/debwolfe">PROJECTS</a></li>
+        <li class ="selected">ADD IT UP</li>
+        <li><a href = "http://www.instagram.com/debwolfe">GALLERIES</a></li>
+        <li><a href = "https://socrates.devbootcamp.com/users/2262"> ABOUT</a></li>
+    </ul>
+    </nav>
+  <main>
+   <header>
+          <h1>Add It Up: Deb Bootcamp Week 2</h1>
+          <h2>Class! What's in an ID?</h2>
+          <h4>November 30, 2014</h4>
+      </header>
+  <section>
+        <img  class = "lead" src = "../images/berries.jpg" alt = "Berries" />
+        <p>
+            Before we start in on the difference between class and ID, we ought to establish some similarities between the two. They are both used in the service of style. Instead of having to rely on only HTML elements and attributes, we can spell out the extras in a CSS (Cascading Style Sheets) file that can be used by more than one file across a site. There are no browser defaults for either ID's or classes declared in HTML pages. They both require an entry in the referenced CSS file to do anything at all. Once referenced, other sites can also apply the style-file by linking to the CSS page.
+        </p>
+        <p>
+            A good rule of thumb for describing the major difference between ID's and classes is that you should use an ID only once but you can use classes over and over. An element can have only one ID and each ID can have only one element. ID is starting to sound like a special case. In fact, this uniqueness allows a browser to get to an ID on a page by using a hash value like so: http://yourchickencoop.com#newsflash. This will also be more useful to the Javascript getElementbyID function.
+        </p>
+        <p>
+          Classes can be used over and over for different elements. Want the same font in links and paragraphs? Declare the #read-all-about-it class with a font and color. Then reference the same class in multiple elements. To change the font and color for Halloween, you only have to change it in one place..the #read-all-about-it entry in the CSS file. </p>
+          <blockquote>a href class = "read-all-about-it"</blockquote>
+          <blockquote>p class = "read-all-about-it"</blockquote>
+        <p>
+          You can also apply different classes to the same element. For example, you could apply the class of box to get the basic shape of the thing (div class = "box"). To make the same box but in a different color specify two classes. (div class = "red box")  This is an excellent way to get to a DRY (don't repeat yourself) web-site since all boxes inherit the same characterics. To override the shape of the box, we could specify an ID for a special case. In other words, we aren't boxed into a corner when declaring the class.
+        </p>
+    </section>
+</main>
+</div>
+<footer>
+  Created by Deb Wolfe, 2104
+</footer>
+
+
+
+
