@@ -1,0 +1,154 @@
+article, footer, header, main, nav, section {
+  display: block;
+}
+
+header {
+  font-family: BrandonGrotesque-Regular, "futura-pt-1","futura-pt-2", Verdana, serif;ß
+}
+
+p {
+    font-family: BrandonGrotesque-Regular, "futura-pt-1","futura-pt-2", Verdana, serif;
+  }
+  div.sidebar {
+  float:left;
+  width: 200px;
+  height: 1240px;
+  background-color: #D1D1D1;
+}
+
+div.content {
+  overflow:hidden;
+  padding: 4px;
+}
+
+div.home-nav a {
+  display: block;
+  padding: 18px 45px;
+  text-decoration: none;
+  font-family: impact, arial;
+  font-size: large;
+  color: black;
+  }
+
+div.home-nav a:hover{
+  color: #c00;
+  background-color: white; }
+
+div.bio {
+  text-align: center;
+  padding: 8px;
+}
+
+div.bio p{
+  font-family: arial;
+  text-align: left;
+}
+
+#sidebar-nav {
+  list-style:none;
+}
+
+#sidebar-nav li a{
+  text-decoration: none;
+  font-family: impact, arial;
+  color: black;
+}
+
+#sidebar-nav li p{
+  text-decoration: none;
+  font-family: impact, arial;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#sidebar-nav li a:hover {
+  color: #c00;
+}
+
+#top-nav {
+  width: 100%;
+  float: left;
+  margin: 0 0 3em 0;
+  padding: 0;
+  list-style: none;
+  background-color: #F2F2F2;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+#top-nav li {
+  float: left;
+   }
+
+#top-nav li a {
+  display: block;
+  padding: 8px 45px;
+  text-decoration: none;
+  font-weight: medium;
+  font-family: impact, arial;
+  color: red;
+}
+
+  #top-nav li.selected {
+  display: block;
+  padding: 8px 45px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: impact, arial;
+  color: red;
+  background-color: white;
+}
+
+#top-nav li a:hover {
+  color: #C00;
+  background-color: white;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px;
+}
+
+#.light-box{
+  overflow: hidden;
+  width: 100%;
+}
+div.polaroid-left {
+  display: block;
+  float: left;
+  width: 250px;
+  height: 300px;
+  background-color: #D1D1D1;
+  margin: 12px;
+}
+
+div.polaroid-right {
+  display: block;
+  float: right;
+  width: 250px;
+  height: 300px;
+  background-color: #D1D1D1;
+  margin: 12px;
+}
+
+figure {
+  padding: 2px;
+  margin: 2px;
+}
+
+figcaption {
+  font-family: arial;
+  text-align: left;
+}
+
+
+  footer {
+    font-size: small;
+    border-top: 1px solid gray;
+  }
+
+
+
