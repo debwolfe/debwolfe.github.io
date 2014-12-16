@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Add It Up, a Blog by Deb Wolfe</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<div class = "sidebar">
+  <div class = "home-nav">
+        <a href = "../index.html">DEB WOLFE</a>
+  </div>
+  <aside>
+    <div class = "bio">
+      <img src = "../images/debwolfe.jpg" alt = "Deb Wolfe">
+      <p>I'm Deb Wolfe, a developer from SF reporting from bootcamp.</p>
+    </div>
+  </aside>
+  <nav>
+    <ul id = "sidebar-nav">
+        <li> <a href = "../blog/index.html">Up</a></li>
+        <li> <a href = "">November</a></li>
+        <li> <a href = "">October</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div class = "content">
+<nav>
+    <ul id = "top-nav">
+        <li><a href = "http://www.github.com/debwolfe">PROJECTS</a></li>
+        <li class ="selected">ADD IT UP</li>
+        <li><a href = "http://www.instagram.com/debwolfe">GALLERIES</a></li>
+        <li><a href = "https://socrates.devbootcamp.com/users/2262"> ABOUT</a></li>
+    </ul>
+    </nav>
+  <main>
+ <header>
+          <h1>Like a fish needs a bicycle basket</h1>
+          <h2> Enumerable's Cycle Method</h2>
+          <h4>December 15, 2014</h4>
+      </header>
+      <section>
+        <a href = "http://apidock.com/ruby/Enumerable/cycle">
+          <img  class = "lead" src = "../images/cycle-basket.jpg" alt = "Cycle Basket" />
+        </a>
+        <p>
+            Okay. Okay. Perhaps the Cycle Method is a bit more useful to a Ruby programmer than a bicycle is to a fish. But there are so many other methods in the Enumerable class to know and like. In IRB entering:
+          </p>
+            <pre> <code>Enumerable.instance_methods.sort</code></pre>
+          Returns this array:
+          <pre><code>
+          [:all?, :any?, :chunk, :collect, :collect_concat, :count, :cycle, :detect, :drop, :drop_while, :each_cons,
+           :each_entry, :each_slice, :each_with_index, :each_with_object, :entries, :find, :find_all, :find_index,
+            :first, :flat_map, :grep, :group_by, :include?, :inject, :lazy, :map, :max, :max_by, :member?,
+            :min, :min_by, :minmax, :minmax_by, :none?, :one?, :partition, :reduce, :reject,
+            :reverse_each, :select, :slice_before, :sort, :sort_by, :take, :take_while, :to_a, :zip]</code></pre>
+            <p>
+            There's <code>map</code> for when you want to derive something new based on every element in your enum basket. All the new items, after you've run a block on them, will return in a new array. There's also <code>group_by</code> for when you want to lump your enum basket into piles based on an attribute of the items. After you run the condition block, you will get back a hash for each kind of item. If all goes well, the condition is the key to the hash and each of the items will be stored in the value part as an array.
+        </p>
+        <p>
+         The Cycle Enumerable is a bit different in that we just want to hop through the elements in the enum basket  for a specified number of hops and run a block. How do we know if our basket is a special Enumerable basket? It will respond to <code>.each</code>. But in the case of <code>cycle</code> we can give it a separate number of times to cycle through the collection. When nill is passed, the cycle will run on forever and ever in a bad way. Cycle seems to be good for text and display tasks. The TextHelper in Rails also has a Cycle method. If we take our cohort list, let's cycle through everyone and print them a message:
+        </p>
+        <code>
+          arr = ['Afton Hencky' , 'Andrew Dowd' , 'Augustus Dixon Adair' , 'Brian Lin' , 'Caitlyn Kennedy' , 'Cari Westbrook' , 'Daniel Ng' , 'Deb Wolfe' , 'Diana Marquez' , 'Elizabeth Fu' , 'Evan Hughes' , 'Ganesh Balaji' , 'Gregory Santulli' , 'Isaac Guttman' , 'Jack Lin' , 'Janet Brown' , 'Jeanine Loughlin' , 'Jeremy Gagon' , 'Jessica Grebenschikov' , 'Jonathan Berk' , 'Katrina Eaton' , 'Lukas Jones' , 'Peter Brown' , 'Peter Cusack' , 'Rebecca Caroline Holzschuh' , 'Richard Chen' , 'Ryan Loughlin' , 'Sam Sedighian' , 'Scott Reiman' , 'Xi Huang' , 'Zac Barnes' , 'ratanak chheang']
+          arr.cycle (arr.length) {  |x|  p "Stay in the basket,  " <<  x  <<  "!"}
+        </code>
+
+      </section>
+</main>
+</div>
+<footer>
+  Created by Deb Wolfe, 2104
+</footer>
+
+
+
+
