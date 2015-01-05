@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Add It Up, a Blog by Deb Wolfe</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<div class = "sidebar">
+  <div class = "home-nav">
+        <a href = "../index.html">DEB WOLFE</a>
+  </div>
+  <aside>
+    <div class = "bio">
+      <img src = "../images/debwolfe.jpg" alt = "Deb Wolfe">
+      <p>I'm Deb Wolfe, a developer from SF reporting from bootcamp.</p>
+    </div>
+  </aside>
+  <nav>
+    <ul id = "sidebar-nav">
+        <li> <a href = "../blog/index.html">Up</a></li>
+        <li> <a href = "">November</a></li>
+        <li> <a href = "">October</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div class = "content">
+<nav>
+    <ul id = "top-nav">
+        <li><a href = "http://www.github.com/debwolfe">PROJECTS</a></li>
+        <li class ="selected">ADD IT UP</li>
+        <li><a href = "http://www.instagram.com/debwolfe">GALLERIES</a></li>
+        <li><a href = "https://socrates.devbootcamp.com/users/2262"> ABOUT</a></li>
+    </ul>
+    </nav>
+  <main>
+ <header>
+          <h1> Bumper Sticker Factory</h1>
+          <h2> A Real World Class </h2>
+          <h4>January 2, 2015</h4>
+      </header>
+      <section>
+        <a href = "http://www.bumperstickerz.com/the-ultimate-bumper-sticker-list.htm">
+          <img  class = "lead" src = "../images/bumper-sticker.jpg" alt = "Bumper Sticker" />
+        </a>
+        <p>
+          While driving home for the holidays, I spotted a bumper sticker I'd never seen before. It was in the cab of a small size pick-up strategically placed behind the driver's seat. Here's what it said: "Being a nice person is a good idea". The Highway 5 rally has always provided time and space to think. Since I've been given over to thinking of classes and objects these days, I had a puzzle over how to model Person and Idea correctly for this ethical and politely proselytizing driver. While classes can represent abstract concepts such as person and idea and allow for attribues such as 'good' and methods such as 'be nice', I thought of building something about the bumper sticker itself.
+        </p>
+        <p>
+          Here's a scratch list for ruby classes in general and for our bumper sticker class in particular.
+          <ul>
+            <li> Figure out if the class can be included in a larger class. For example, if our bumper stickers are coming from the print shop they might descend from PrintProduct. </li>
+             <li>Capitalize the first letters of the words in the class, no spaces, no hyphens. Ergo BumperSticker.
+             </li>
+            <li> When you have a whole list of variables for the class, give it an options hash so that your fellow rubyists do not need to read the class declaration to populate the variables ie. to create a new BumperSticker.
+            </li>
+            <li> Initialize all variables with an optional value when that makes sense. For example, width for bumper stickers should be 10" and height should be 3". For visibility at a safe following distance, let's make our default font color white and our default background black. Slogans will be provided every time, so the slogan will not have an optional value.
+            </li>
+            <li>For cataloging slogans, we can use a class variable in the initialization statement as well as a self.add_slogan method to append the new slogan to the array of slogans when it doesn't already exist.
+            </li>
+            <li>When interacting with other classes, you can create an instance of the helper class and pass in the instance to the create statement of your class. For example, we might want to create a  <a href = "http://jergagon1.github.io/blog/t5-ruby-classes.html">car</a> first and then pass it to our bumper sticker to record which cars take which bumper stickers.
+            </li>
+          </ul>
+
+          <img  class = "lead" src = "../images/bumper-sticker-class.jpg" alt = "Bumper Sticker Class" />
+
+      <p>
+        And remember..
+Ham and eggs - A day's work for a chicken; A lifetime commitment for a pig.
+      </p>
+      </section>
+</main>
+</div>
+<footer>
+  Created by Deb Wolfe, 2015
+</footer>
+
+
+
+
