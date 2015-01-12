@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Add It Up, a Blog by Deb Wolfe</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<div class = "sidebar">
+  <div class = "home-nav">
+        <a href = "../index.html">DEB WOLFE</a>
+  </div>
+  <aside>
+    <div class = "bio">
+      <img src = "../images/debwolfe.jpg" alt = "Deb Wolfe">
+      <p>I'm Deb Wolfe, a developer from SF reporting from bootcamp.</p>
+    </div>
+  </aside>
+  <nav>
+    <ul id = "sidebar-nav">
+        <li> <a href = "../blog/index.html">Up</a></li>
+          <li> <a href = "">January</a></li>
+          <li> <a href = "">December</a></li>
+        <li> <a href = "">November</a></li>
+        <li> <a href = "">October</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div class = "content">
+<nav>
+    <ul id = "top-nav">
+        <li><a href = "http://www.github.com/debwolfe">PROJECTS</a></li>
+        <li class ="selected">ADD IT UP</li>
+        <li><a href = "http://www.instagram.com/debwolfe">GALLERIES</a></li>
+        <li><a href = "https://socrates.devbootcamp.com/users/2262"> ABOUT</a></li>
+    </ul>
+    </nav>
+  <main>
+ <header>
+          <h1> Forgetting the fun in functional</h1>
+          <h2> Considering OOP advantages </h2>
+          <h4>January 11, 2015</h4>
+      </header>
+      <section>
+        <a href = "http://rubyquiz.com/quiz122.html">
+          <img  class = "lead" src = "../images/octopus.jpg" alt = "octopus" />
+        </a>
+        <p>
+        While browsing different styles of implementing the Luhn algorithm credit card checker, I ran across a solution which admitted that it was perhaps a little too functional. Functional programmers approach the world as if it offered many chances to solve algebra problems. All of the bits and bobs are accounted for in one line, in order of completion with no mutable variables. Here's Ryan Leavengood's uber-Functional solution:
+      </p>
+        <code>
+        def self.luhn_check(cc)
+        # I like functional-style code (though this may be a bit over the top)
+        (cc.split('').reverse.enum_for(:each_slice, 2).inject('') do |s, (a, b)|
+          s << a + (b.to_i * 2).to_s
+        end.split('').inject(0) {|sum, n| sum + n.to_i}) % 10 == 0
+      end
+    </code>
+  <p>
+        In the spirit of learning Object Oriented programming this week, I was curious to see the differences. In my credit card checker, I was thinking hard about the scope of the variables since some are meant to be mutable. We might keep our list of credit card vendors declared as a constant. For variables that are true for our implementation and describe each and every credit card object we make, we declare a class variable @@. For example, @@hours_to_hold_authorization might be set to 48 hours for our business. The obvious instance variable would be @credit_card_number. The functional programmer doesn't declare the instance variable since the function will be exiting out with an answer. There is no need for any other program block to see @credit_card_number. The local variable will be sufficient to get to the true or false answer.
+</p>
+<p>
+  Object oriented programmers write class methods for operations that can't be performed by individual instances of a class. The most popular class method (you get it for free) is the Object.new method. The class is responsible for spawning new objects and not each instance that you would get out of that call Whenever you see a method with a 'self' on the second line, think class method. These might be good for counting up stuff about all the instances.
+</p>
+<p>
+  Blocks, Procs, and Lambdas are also known as closures. These contain a set of code that we want to execute multple times. This is somewhat outside the realm of functional programming since by definition we start at the top of the closure, get to the bottom, and go back up to the top of the closure again. Check out Robert Sosinki's <a href = "http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/">tutorial</a> on Reactive.io.
+</p>
+  <ul>
+    <li> Blocks: our usual way of looping through an Enumerable. For each element, we run an operation on that element. By calling yield, we send each element to that block of code.
+    </li>
+    <li>Procs: you will know a proc by its ampersand argument. Think of it as a drop-in snippet of code. Instead of using yield, we send call to our block of code. You can save re-usable code as an object itself. A Proc is a class in Ruby so we create a new one with an uppercase Proc. A block is just a proc, but it is a type of syntax in Ruby so we use a lowercase. You can pass a proc directly or save a proc as a variable.
+    </li>
+    <li>Lambas: you will know a lambda by the small-case lambda key-word. They are very similar to procs but with two key differences. Lambdas check the number of variables passed to them and can therefore throw an ArgumentError. Procs will stop the loop with a return value while lambdas can return their value, like a method, and continue on with the rest of the set.  Similar to the Enumerable.cycle method, lambda is good for running through some elements and performing a set of operations on them and then hopping back out.
+    </li>
+</ul>
+  <p>
+    Modules are good for leveraging useful code across multiple objects. When an object includes a module, the method becomes available to that object (as well as to all the other ones that include that module too). Think of the old days when we had to include Enumerable (with all of it's awesome methods that apply to collections) in classes in order to get access to those methods.
+  </p>
+  <p>
+     We wouldn't get very far in our Object Oriented journey without the idea of inheiritance. We can open a general file on a class of items and describe attributes and behaviors. In a separate file, we can include or overwrite some more attributes and behaviors to a subclass of items and so on and so forth.  In POODR (Practical Object Oriented Design in Ruby), Sandi Metz describes classical inheritance as "a code arrangement technique."
+   </p>
+   <p>
+    In Composition, the object relationship is not codified in the class hiearchy. Bicycle <i> has-a </i> parts class. Parts can continue to exist even when bicycle doesn't. The aggregation approach has fewer dependencies than inheritence but we loose method delegation. For one thing, we can't be sure that the other class still exists. For example, without our Bicycle, the Parts may not be able to be listed out for a Mechanic who only knows about Bicycles. If Professors belong inside a University, Professors should still exist when the University goes under. We would just want to get a handle on Professors without Universities as well as ones within a University or in multiple Universities.
+  </p>
+      </section>
+</main>
+</div>
+<footer>
+  Created by Deb Wolfe, 2015
+</footer>
+
+
+
+
