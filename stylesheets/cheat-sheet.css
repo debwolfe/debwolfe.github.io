@@ -1,0 +1,44 @@
+body {
+    background-color: lightblue;
+    font-family: Arial;
+}
+
+#title {
+    font-size: 1.5em;
+}
+
+section {
+    padding: 10px;
+    font-size: .8em;
+}
+
+#left-row {
+    background-color: #DDD;
+    width: 30%;
+    border: 1px #000 solid;
+    float: left;
+    height: 600px;
+}
+
+#right-row {
+    background-color: #FFF;
+    width: 65%;
+    border: 1px #000 solid;
+    float: left;
+    height: 600px;
+    padding: 5px;
+}
+
+.column{
+    border: 1px #000 solid;
+    padding: 5px;
+    margin: -1px;
+}
+
+#clear {
+    clear: both;
+}
+
+.bold-font{
+    background-color: lightyellow;
+}
