@@ -1,11 +1,40 @@
 body {
-    background-color: lightblue;
+    background-color: #99D8F0;
     font-family: Arial;
+    padding: 10px;
+    text-align: justify;
+}
+
+.row {
+    margin: 0 75px;
 }
 
 #title {
-    font-size: 1.5em;
+    font-size: 5em;
+    color: #1fa0d1;
+    font-weight: bold;
+    text-align: center;
 }
+
+#subtitle {
+    font-size: 8em;
+    color: #1fa0d1;
+    font-weight: bold;
+    text-align: center;
+}
+
+#italic {
+    color:#000;
+    vertical-align: middle;
+    font-size: 0.5em;
+    font-family: 'Parisienne', cursive;
+}
+
+#intro {
+    margin: auto 0;
+
+}
+
 
 section {
     padding: 10px;
@@ -40,5 +69,9 @@ section {
 }
 
 .bold-font{
-    background-color: lightyellow;
+    background-color: pink;
+}
+
+#example{
+    margin: 100px;
 }
