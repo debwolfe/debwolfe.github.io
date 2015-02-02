@@ -3,78 +3,69 @@
 <head>
   <title>Add It Up, a Blog by Deb Wolfe</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
 </head>
-<div class = "sidebar">
-  <div class = "home-nav">
-        <a href = "../index.html">DEB WOLFE</a>
-  </div>
-  <aside>
-    <div class = "bio">
-      <img src = "../images/debwolfe.jpg" alt = "Deb Wolfe">
-      <p>I'm Deb Wolfe, a developer from SF reporting from bootcamp.</p>
-    </div>
-  </aside>
-  <nav>
-    <ul id = "sidebar-nav">
-        <li> <a href = "../blog/index.html">Up</a></li>
-          <li> <a href = "">January</a></li>
-          <li> <a href = "">December</a></li>
-        <li> <a href = "">November</a></li>
-        <li> <a href = "">October</a></li>
-      </ul>
-  </nav>
-</div>
 
 <div class = "content">
 <nav>
     <ul id = "top-nav">
         <li><a href = "http://www.github.com/debwolfe">PROJECTS</a></li>
         <li class ="selected">ADD IT UP</li>
-        <li><a href = "http://www.instagram.com/debwolfe">GALLERIES</a></li>
-        <li><a href = "https://socrates.devbootcamp.com/users/2262"> ABOUT</a></li>
+        <li><a href = "http://debwolfe.tumblr.com">FLANEUR</a></li>
+        <li><a href = "../about.html"> ABOUT DEB WOLFE</a></li>
     </ul>
     </nav>
   <main>
  <header>
-          <h1> NoSQL Herd Hive</h1>
-          <h2> Introducing the idea and sorting out the players  </h2>
-          <h4> January 25, 2015 </h4>
-      </header>
-      <section>
-        <img  class = "lead" src = "../images/sheep-rows.jpg" alt = "Sheep Rows" />
-        <p>
-          NoSQL database. Really, none? Swearing off structured query language when faced with the regular chores of input, output and filtering data seems like a bad idea. We are used to locating a cell in a hive and not used to hunting through the loosely gathered herd. Some NoSQL proponents unpack the acronym as "not only SQL". That sounds better. "NotOnlySQL" allows users to insert, delete and filter without coming up against the problems of a traditional SQL database. Well, what do we lose? We lose joins and aggregations. Those same folks who talk about "not only SQL" would like to suggest a new name of "no rel" or "no relation" database.
+    <h2> NoSQL Herd Hive</h2>
+    <h3> Introducing the idea and sorting out the players  </h3>
+    <h4> January 25, 2015 </h4>
+  </header>
+  <section>
+    <img  class = "lead" src = "../images/sheep-rows.jpg" alt = "Sheep Rows" />
+    <p>
+      NoSQL database. Really, none? Swearing off structured query language when faced with the regular chores of input, output and filtering data seems like a bad idea. We are used to locating a cell in a hive and not used to hunting through the loosely gathered herd. Some NoSQL proponents unpack the acronym as "not only SQL". That sounds better. "NotOnlySQL" allows users to insert, delete and filter without coming up against the problems of a traditional SQL database. Well, what do we lose? We lose joins and aggregations. Those same folks who talk about "not only SQL" would like to suggest a new name of "no rel" or "no relation" database.
+    </p>
+    <p>
+    How does NoSQL work? Well, that's a trick question. There are a variety of data storage backends that do not follow the relational model. The simplest technique is to store data in key-value pairs. We hand the data store a pair. Whenever we want the value back, we send it a key. In order for this to work, the key must be unique. Similar to the key-value store, is the document-oriented databse.The document is still referenced with a unique ID. Unlike SQL databases which require data types to be defined for each row, the document oriented system can contain a variety of different documents. These documents can be in mark-up languages or in JSON such as in Cassandra or CouchDB. The JSON can also contain functions and not just data.
+   </p>
+    <p>
+      Lets say we have a database of blog entries. In a SQL database we would define our main blog table with an ID and our blog comments table with a column to carry the blog ID. The blog comments belong to one blog entry. In a SQL application we could pull our blog data along with the blog comment data by joining on the blog ID. We then get three rows back; each row with matching blog entry data and each row with different blog comment data. In a NoSQL solution, we would get our blog entry. Secondly, we'd issue another query to blog comment with the blog ID to reach our three blog comment rows.
+    </p>
+      <p>
+      To solve the problem of having to issue two queries to fill a single blog page, the NoSQL user might suggest that a blog entry, also store all the blog comments in the same place. In effect, we would add a new column to the main blog entity whenever a new blog comment comes along. Suffice it to say, some SQL database modelers with a fast performance requirement would solve the same problem of availability by introducing a non-normalized table with columns in the master table that would have been a separate child table with a foreign key in a normalized scheme.
+    </p>
+    <h4> Latency </h4>
+    <p>
+      One way to understand the NoSQL approaches and pure a SQL approach is to talk about three main areas that database engineers were loooking to improve. When latency is an issue, a key-value solution is the fast ticket. In particular, memcached and the server MemchacheDB store the key-value pairs in RAM. We try a fetch with a key and it will come back blazing fast. If it's not in RAM, then the database runs the query on the key, stores the result in RAM and return the data.
+      </p>
+      <h4> Gargantuanousity</h4>
+      <p>
+        The biggest use case for NoSQL is that of Big Data. When the number of rows reach in the billions and the number of columns are in the millions, users have to use a NoSQL approach since there aren't any SQL databases that can handle that. For crunching analytics against these large datastores, HBase with map/reduce is the best solution.  Not only do we run into problems when querying the data, we would have an issue with just storing it. Usually, relational database have to run on a single server. The ability to reliably cluster SQL servers came after the surge of interest in working with these large sets of data.
         </p>
+        <h4> Availability</h4>
         <p>
-        How does NoSQL work? Well, that's a trick question. There are a variety of data storage backends that do not follow the relational model. The simplest technique is to store data in key-value pairs. We hand the data store a pair. Whenever we want the value back, we send it a key. In order for this to work, the key must be unique. Similar to the key-value store, is the document-oriented databse.The document is still referenced with a unique ID. Unlike SQL databases which require data types to be defined for each row, the document oriented system can contain a variety of different documents. These documents can be in mark-up languages or in JSON such as in Cassandra or CouchDB. The JSON can also contain functions and not just data.
-       </p>
+        Speaking of clustering, the real stand-out in the NoSQL bunch is CouchDB. It can support multi-master replication which allows data to be stored by a group of computers. The multi-master system has to work out confilcts between the versions, merge and propogate the correct one back.
+      </p>
         <p>
-          Lets say we have a database of blog entries. In a SQL database we would define our main blog table with an ID and our blog comments table with a column to carry the blog ID. The blog comments belong to one blog entry. In a SQL application we could pull our blog data along with the blog comment data by joining on the blog ID. We then get three rows back; each row with matching blog entry data and each row with different blog comment data. In a NoSQL solution, we would get our blog entry. Secondly, we'd issue another query to blog comment with the blog ID to reach our three blog comment rows.
-        </p>
-          <p>
-          To solve the problem of having to issue two queries to fill a single blog page, the NoSQL user might suggest that a blog entry, also store all the blog comments in the same place. In effect, we would add a new column to the main blog entity whenever a new blog comment comes along. Suffice it to say, some SQL database modelers with a fast performance requirement would solve the same problem of availability by introducing a non-normalized table with columns in the master table that would have been a separate child table with a foreign key in a normalized scheme.
-        </p>
-        <h4> Latency </h4>
-        <p>
-          One way to understand the NoSQL approaches and pure a SQL approach is to talk about three main areas that database engineers were loooking to improve. When latency is an issue, a key-value solution is the fast ticket. In particular, memcached and the server MemchacheDB store the key-value pairs in RAM. We try a fetch with a key and it will come back blazing fast. If it's not in RAM, then the database runs the query on the key, stores the result in RAM and return the data.
-          </p>
-          <h4> Gargantuanousity</h4>
-          <p>
-            The biggest use case for NoSQL is that of Big Data. When the number of rows reach in the billions and the number of columns are in the millions, users have to use a NoSQL approach since there aren't any SQL databases that can handle that. For crunching analytics against these large datastores, HBase with map/reduce is the best solution.  Not only do we run into problems when querying the data, we would have an issue with just storing it. Usually, relational database have to run on a single server. The ability to reliably cluster SQL servers came after the surge of interest in working with these large sets of data.
-            </p>
-            <h4> Availability</h4>
-            <p>
-            Speaking of clustering, the real stand-out in the NoSQL bunch is CouchDB. It can support multi-master replication which allows data to be stored by a group of computers. The multi-master system has to work out confilcts between the versions, merge and propogate the correct one back.
-          </p>
-            <p>
-            Strict advocates of Atomicity, Consistency, Isolation and Durability may worry about complicated read-write scenarios in all of these NoSQL solutions. But what we loose in consistency, we gain in availability and partition tolerance.
-          </p>
+        Strict advocates of Atomicity, Consistency, Isolation and Durability may worry about complicated read-write scenarios in all of these NoSQL solutions. But what we loose in consistency, we gain in availability and partition tolerance.
+      </p>
+  </div>
+<div class = "icons">
+    <a href = "http://lnkd.in/d6HB3p2"><img src = "../images/linked-in.png"/></a>
+ </div>
+ <div class = "icons">
+    <a href = "http://twitter.com/debwolfe"><img src = "../images/twitter.png"/ ></a>
+</div>
+<div class = "icons">
+   <a href="http://www.gitihub.com/debwolfe"><img src = "../images/blacktocat-32.png"/></a>
+</div>
 <footer>
-  Created by Deb Wolfe, 2015
+  <p>
+  Created by Deb Wolfe, 2014
+</p>
 </footer>
-</html>
 
 
 

@@ -6,8 +6,12 @@ header {
   font-family: BrandonGrotesque-Regular, "futura-pt-1","futura-pt-2", Verdana, serif;ß
 }
 
-p {
+body {
     font-family: BrandonGrotesque-Regular, "futura-pt-1","futura-pt-2", Verdana, serif;
+    background-color: #fff;
+    padding: 1.5em 0.25em;
+  }
+
   }
   div.sidebar {
   float:left;
@@ -117,17 +121,18 @@ img {
   width: 100%;
 }
 div.polaroid-left {
-  display: block;
+  display: inline-block;
   float: left;
   width: 250px;
   height: 300px;
+
   background-color: #D1D1D1;
   margin: 12px;
 }
 
 div.polaroid-right {
-  display: block;
-  float: right;
+  display: inline-block;
+  float: left;
   width: 250px;
   height: 300px;
   background-color: #D1D1D1;
@@ -144,10 +149,18 @@ figcaption {
   text-align: left;
 }
 
+div.icons{
+  display: inline-block;
+  float: left;
+  width: 4em;
+  height: 4em;
+}
 
   footer {
-    font-size: small;
     border-top: 1px solid gray;
+    font-size: small;
+    padding: 1em 0.25em;
+}
   }
 
 
